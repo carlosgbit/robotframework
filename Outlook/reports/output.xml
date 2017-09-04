@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170901 12:21:12.664" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\red\workspace\Outlook\test_cases\Proyecto.robot" id="s1" name="Proyecto">
+<test id="s1-t1" name="Recorrer csv y probar el correo de outlook">
+<kw name="Read Csv File To List" library="CSVLibrary">
+<doc>Read CSV file and return its content as a Python list of tuples.</doc>
+<arguments>
+<arg>${CSV_PATH}</arg>
+</arguments>
+<assign>
+<var>${all users}</var>
+</assign>
+<msg timestamp="20170901 12:21:13.032" level="INFO">${all users} = [('shadow_plage@hotmail.com', 'Forgive93.'), ('fkoasfd..asdasd', 'askdojjiiaso'), ('shadow_plage@hotmail.com', 'sdsadsadk')]</msg>
+<status status="PASS" endtime="20170901 12:21:13.032" starttime="20170901 12:21:13.031"></status>
+</kw>
+<kw type="for" name="${user} IN [ @{all users} ]">
+<kw type="foritem" name="${user} = ('shadow_plage@hotmail.com', 'Forgive93.')">
+<kw name="Open Browser" library="Selenium2Library">
+<doc>Opens a new browser instance to given URL.</doc>
+<arguments>
+<arg>${URL}</arg>
+<arg>${BROWSER_1}</arg>
+</arguments>
+<msg timestamp="20170901 12:21:13.035" level="INFO">Opening browser 'gc' to base url 'https://login.live.com/login'</msg>
+<status status="PASS" endtime="20170901 12:21:19.617" starttime="20170901 12:21:13.034"></status>
+</kw>
+<kw name="Maximize Browser Window" library="Selenium2Library">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20170901 12:21:20.776" starttime="20170901 12:21:19.617"></status>
+</kw>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<arguments>
+<arg>${SCREENSHOT_PATH_1}imag-{index}.png</arg>
+</arguments>
+<msg timestamp="20170901 12:21:21.264" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../reports_CSVExampleTest/screenshotimag-1.png"&gt;&lt;img src="../reports_CSVExampleTest/screenshotimag-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170901 12:21:21.265" starttime="20170901 12:21:20.777"></status>
+</kw>
+<kw name="Set Selenium Speed" library="Selenium2Library">
+<doc>Sets the delay in seconds that is waited after each Selenium command.</doc>
+<arguments>
+<arg>${DELAY}</arg>
+</arguments>
+<status status="PASS" endtime="20170901 12:21:21.266" starttime="20170901 12:21:21.265"></status>
+</kw>
+<kw name="Input Text" library="Selenium2Library">
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<arguments>
+<arg>i0116</arg>
+<arg>@{user}[0]</arg>
+</arguments>
+<msg timestamp="20170901 12:21:21.267" level="INFO">Typing text 'shadow_plage@hotmail.com' into text field 'i0116'</msg>
+<kw name="Capture Page Screenshot" library="Selenium2Library">
+<doc>Takes a screenshot of the current page and embeds it into the log.</doc>
+<msg timestamp="20170901 12:21:21.714" html="yes" level="INFO">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" endtime="20170901 12:21:21.715" starttime="20170901 12:21:21.321"></status>
+</kw>
+<msg timestamp="20170901 12:21:21.718" level="FAIL">ValueError: Element locator 'i0116' did not match any elements.</msg>
+<status status="FAIL" endtime="20170901 12:21:21.718" starttime="20170901 12:21:21.267"></status>
+</kw>
+<status status="FAIL" endtime="20170901 12:21:21.718" starttime="20170901 12:21:13.033"></status>
+</kw>
+<status status="FAIL" endtime="20170901 12:21:21.718" starttime="20170901 12:21:13.033"></status>
+</kw>
+<status status="FAIL" endtime="20170901 12:21:21.719" critical="yes" starttime="20170901 12:21:13.029">ValueError: Element locator 'i0116' did not match any elements.</status>
+</test>
+<doc>CSV examples for Robot Framework.</doc>
+<status status="FAIL" endtime="20170901 12:21:21.723" starttime="20170901 12:21:12.672"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="1" pass="0">Critical Tests</stat>
+<stat fail="1" pass="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="1" id="s1" name="Proyecto" pass="0">Proyecto</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
